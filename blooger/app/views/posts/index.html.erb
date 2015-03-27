@@ -1,6 +1,6 @@
 <h2>Recent Posts</h2>
 <br >
-<p><%= link_to "Add Post", new_post_path, class: ['btn-primary', 'btn']%></p>
+
 <br >
 <% @posts.each do |post| %>
   <div class="well"><p><%= link_to post.title, post_path(post) %></p></div>
