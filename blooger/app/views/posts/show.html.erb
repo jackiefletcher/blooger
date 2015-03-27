@@ -1,13 +1,26 @@
 <h2><%= @post.title %></h2>
-<h5><%= @post.created_at.to_date %></h5>
+<h5>Post created: <%= @post.created_at.to_date %></h5>
+<br >
 
 <p><%= @post.content %></p>
-
+<br >
 <p>
+  <%= link_to "Comment", new_post_comment_path(@post), class: ['btn-success', 'btn-sm'] %>
   <%= link_to "Edit Post", edit_post_path(@post), class: ['btn-warning', 'btn-sm'] %>
   <%= link_to "Delete Post", post_path(@post), class: ['btn-danger', 'btn-sm'], :data => { :confirm => "Are you sure?",
                                                           :method => "delete" } %>
 </p>
-
+<br >
+<br >
+<p>
+  <% if @post.comments.any? %>
+    <h4>Comments</h4>
+    <% @post.comments.each do |comment| %>
+      <div class="well"><p><%= comment.text %></div>
+    <% end %>
+  <% else %>
+    <p>There are no comments yet for this post.</p>
+  <% end %>
+</p>
 
 <p><%= link_to "Home", posts_path %></p>
