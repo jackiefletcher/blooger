@@ -1,5 +1,7 @@
 <h1>Posts</h1>
 
+<p><%= link_to "Add Post", new_post_path, class: ['btn-primary', 'btn']%></p>
+
 <% @posts.each do |post| %>
   <p><%= link_to post.title, post_path(post) %></p>
 <% end %>
