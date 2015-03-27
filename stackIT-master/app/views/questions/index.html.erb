@@ -1,0 +1,16 @@
+<h1>StackIT</h1>
+
+<h4>Welcome <%= @user.email %></h4>
+
+
+<%= render 'form' %>
+
+<br>
+<br>
+
+<h2>Recent Questions</h2>
+  <% @questions.each do |question| %>
+<div id="questions">
+    <h3><%= link_to question.ask, question_path(question) %></h3>
+</div>
+  <% end %>
