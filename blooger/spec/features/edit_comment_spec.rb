@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'edit comment process' do
   it 'will edit a comment' do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     post = FactoryGirl.create(:post)
     visit post_path(post)
     click_on 'Comment'

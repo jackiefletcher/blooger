@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'delte comment process' do
   it 'will delete a comment' do
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
     post = FactoryGirl.create(:post)
     visit post_path(post)
     click_on 'Comment'
