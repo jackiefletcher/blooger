@@ -1,4 +1,4 @@
-Blooger
+Blogger
 ==============
 
 A simple blog website/app, allowing users to create posts and comment on these posts.
